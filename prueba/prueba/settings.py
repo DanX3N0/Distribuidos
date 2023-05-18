@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #añadir las apps
+    'ejemplo.apps.EjemploConfig',
 ]
 
 MIDDLEWARE = [
@@ -48,9 +50,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+#urls raiz
 ROOT_URLCONF = 'prueba.urls'
-
+#plantillas 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

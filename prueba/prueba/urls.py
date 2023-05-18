@@ -1,4 +1,5 @@
-"""prueba URL Configuration
+"""
+prueba URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.0/topics/http/urls/
@@ -14,12 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from .views import saludar, datos, index, Cuadrado
 
+
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', index, name="index"),
     path('saludar/',saludar, name="saludar"),
     path('dato/<str:nombres>/<int:edad>', datos, name="datos"),
-    path('cuadrado/<int:lado>', Cuadrado.as_view(), name="cuadrado")
+    path('cuadrado/<int:lado>', Cuadrado.as_view(), name="cuadrado"),
+    #con include agrega la carpeta de la otra app
+    #los params son el nombre de la carpeta y el 
+    #archivo urls / se debe importar include
+    path('ejemplo/', include('ejemplo.urls'), name='ejemplo'),
 ]
