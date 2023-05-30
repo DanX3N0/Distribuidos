@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+   <h1>Datos de las Personas</h1>
+   <a href="{% url 'persona_nuevo' %}">Nueva Persona</a>
+   <table>
+      <thead>
+         <tr>
+            <th>
+               Nro.
+            </th>
+            <th>
+               Nombres
+            </th>
+            <th>
+               C.I.
+            </th>
+            <th>
+               Correo Electronico
+            </th>
+            <th>
+               Opciones
+            </th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for persona in personas %}
+         <tr>
+            <td align="center">{{ forloop.counter0 }}</td>
+            <td>{{ persona.apellidos}} {{ persona.nombres}}</td>
+            <td >{{ persona.ci }}</td>
+            <td>{{ persona.correo }}</td>
+            <td>Editar</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   {{personas}}
+</body>
+
+</html>

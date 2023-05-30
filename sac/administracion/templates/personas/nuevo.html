@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <h1>Nueva Persona</h1>
+   <form action="" method="POST" id="fPersona" >
+      {%csrf_token%}
+      Nombres: <input type="text" name="nombres" max="20" placeholder="Introduzca los nombres"> <br/>
+      Apellidos: <input type="text" name="apellidos" max="20" placeholder="Introduzca los apellidos"> <br/>
+      Dirección: <input type="text" name="direccion" max="50" placeholder="Introduzca la dirección"> <br/>
+      Teléfono: <input type="text" name="telefono" > <br/>
+      Cédula de identidad: <input type="text" name="ci" > <br/>
+      Correo Electrónico: <input type="email" name="correo"> <br/>
+      Fecha de nacimiento: <input type="date" name="fecha_nacimiento"> <br/>
+      <input type="submit" value="Guardar">
+      <input type="submit" value="Borrar">
+      <a href="">Cancelar</a>
+   </form>
+</body>
+</html>
